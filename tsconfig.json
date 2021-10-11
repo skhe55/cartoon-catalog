@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "./public",
+        "module": "commonjs",
+        "target": "ES2017",
+        "noEmit": true,
+        "jsx": "react",
+        "skipLibCheck": true,
+        "rootDir": "./src",
+        "baseUrl": "./src"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
