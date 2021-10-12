@@ -1,4 +1,4 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { put, takeEvery, takeLatest, takeLeading, call } from 'redux-saga/effects';
 import { FETCH_SERIES } from '../redux/type';
 import { setSeries } from '../redux/actions';
 
@@ -14,8 +14,10 @@ export function* seriesWatcher(): any {
 
 export function* seriesWorker(): any {
     let data: any = yield call(fetchSeriesFromApi, 0); // grab the max number of pages
+    let arr: any = [];
     for (let i = 1; i <= data.info.pages; i++) {
         data = yield call(fetchSeriesFromApi, i);
-        yield put(setSeries(data.results));
+        arr = [...arr, ...data.results];
     }
+    yield put(setSeries(arr));
 }
