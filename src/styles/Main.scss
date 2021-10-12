@@ -1,0 +1,51 @@
+$sizeInputText: 30px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: #a7cbd2;
+}
+
+._mainFlexContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    ._wrapperMainFlexCont {
+        display: flex;
+        width: 35%;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px auto 0 auto;
+            ._inputSearch {
+                width: 100%;
+                height: 100%;
+                padding: 6px 0 6px 10px;
+                font-size: $sizeInputText;
+                color: black;
+                border-radius: 12px;
+                border-color: black !important;
+            }
+            ._inputSearch:focus {
+                border-color: black !important;
+                outline: none;
+            }
+            .fas.fa-search {
+                margin-right: 5px;
+                font-size: 2.2rem
+            }
+    }
+}
+
+._wrapContainer {
+    width: 100%;
+    margin: 12px 0 0 0;
+    ._rowFlexWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 420px;
+        flex-wrap: wrap;
+    }
+}

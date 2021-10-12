@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+._wrapCardItem {
+    // flex-grow: ;
+    width: 33%;
+}
+
+.containerFlex {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 6px;
+    border-radius: 12px;
+    .cardItemStyles {
+        margin: 4px 4px 4px 4px;
+        font-size: 23px;
+    }
+}
