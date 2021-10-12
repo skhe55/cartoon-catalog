@@ -1,15 +1,23 @@
 {
     "compilerOptions": {
-        "outDir": "./public",
-        "module": "commonjs",
-        "target": "ES2017",
-        "noEmit": true,
-        "jsx": "react",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
-        "rootDir": "./src",
-        "baseUrl": "./src"
+        "esModuleInterop": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react"
     },
     "include": [
-        "src/**/*"
+        "src"
     ]
 }

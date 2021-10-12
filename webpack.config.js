@@ -14,7 +14,16 @@ module.exports = {
             {
                 test: /\.ts[x]?$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "@babel/preset-env",
+                            "@babel/preset-react",
+                            "@babel/preset-typescript",
+                        ],
+                    },
+                },
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -31,12 +40,13 @@ module.exports = {
         path: path.resolve(__dirname, "./dist"),
     },
     devServer: {
-        static: {
-            directory: path.join(__dirname, 'public'),
-        },
-        hot: true,
+        // static: {
+        //     directory: path.join(__dirname, 'public'),
+        // },
+        // hot: true,
+        static: path.join(__dirname, "./dist"),
         compress: true,
-        port: 9002,
+        port: 4000,
     },
     plugins: [
         new HtmlWebpackPlugin({
