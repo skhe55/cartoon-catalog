@@ -11,7 +11,6 @@ export default function seriesReducer(state = initialState, action: any) {
                 ...state,
                 series:
                     [
-                        ...state.series,
                         ...action.payload
                     ]
             }
