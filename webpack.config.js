@@ -40,11 +40,8 @@ module.exports = {
         path: path.resolve(__dirname, "./dist"),
     },
     devServer: {
-        // static: {
-        //     directory: path.join(__dirname, 'public'),
-        // },
-        // hot: true,
         static: path.join(__dirname, "./dist"),
+        historyApiFallback: true,
         compress: true,
         port: 4000,
     },
