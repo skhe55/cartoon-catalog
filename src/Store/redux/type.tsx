@@ -1,2 +1,5 @@
 export const SET_SERIES = "SET_SERIES";
+export const SET_CHARACTERS = "SET_CHARACTERS";
 export const FETCH_SERIES = "FETCH_SERIES";
+export const FETCH_CHARACTERS = "FETCH_CHARACTERS";
+export const RESET_DATA = "RESET_DATA";
