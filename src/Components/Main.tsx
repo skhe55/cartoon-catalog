@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
 import { FETCH_SERIES } from '../Store/redux/type';
 import '../styles/Main.scss';
 import CardItem from './SeasonCards/CardItem';
 import Header from './SeasonCards/Header';
+import { RootState } from '../Store/redux/index';
 
 function Main() {
-    const series = useSelector(state => state.seriesReducer.series);
+    const series = useSelector((state: RootState) => state.seriesReducer.series);
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState<boolean>(false);
-    const [count, setCount] = useState<number>(1);
     const getEpisodes = (el: any) => {
         return series.filter((e: any) => e.episode.slice(2, 3) == el);
     }
     const seasons: Array<number> = [1, 2, 3, 4];
     useEffect(() => {
         dispatch({ type: FETCH_SERIES });
-        setLoading(true);
     }, [])
     if (series[0] != undefined)
-        console.log(series[0].episode.slice(2, 3));
+        console.log(series);
     return (
         <div className='_mainFlexContainer'>
             <div className='_wrapperMainFlexCont'>
@@ -37,9 +36,11 @@ function Main() {
                                             nameEP={e.name}
                                             date={e.air_date}
                                             serialnum={e.episode.slice(4, 6)}
+                                            characters={e.characters}
                                         />
                                     )} </div>
-                            </div></>);
+                            </div>
+                        </>);
                 })
             }
         </div>
