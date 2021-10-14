@@ -4,14 +4,15 @@ $sizeInputText: 30px;
     box-sizing: border-box;
     margin: 0;
     top: 0;
-    left: 0;
-    background-color: #a7cbd2;
+    // left: 0;
+    // background-color: #a7cbd2;
 }
 
 ._mainFlexContainer {
     display: flex;
     flex-direction: column;
     margin-left: 12px;
+    margin-right: 12px;
     ._wrapperMainFlexCont {
         display: flex;
         width: 35%;
@@ -49,3 +50,14 @@ $sizeInputText: 30px;
         flex-wrap: wrap;
     }
 }
+
+@media screen and (max-width: 780px){   
+    ._rowFlexWrap {
+        display: none !important;
+    }
+    ._rowFlexWrap-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}   
