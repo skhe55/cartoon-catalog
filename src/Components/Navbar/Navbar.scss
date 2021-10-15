@@ -1,5 +1,8 @@
-$navBackColor : #00828c;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+$navBackColor : #b3b27d;
+$hoverLink: #ad8849;
 $sizeIcon: 85px;
+$borderRadius: 12px;
 * {
     margin: 0;
     top: 0;
@@ -7,9 +10,11 @@ $sizeIcon: 85px;
 }
 
 @mixin transiton {
-    transition: all 0.5s ease-out;
+    transition: all 1s ease-out;
 }
-
+@mixin fontFamily {
+    font-family: 'Quicksand', sans-serif;
+}
 .navbar {
     position: fixed;
     display: flex;
@@ -20,6 +25,7 @@ $sizeIcon: 85px;
     color: white;
     width: 100%;
     .logo {
+        @include fontFamily();
         font-size: 24px;
     }
     .icon-logo {
@@ -31,7 +37,6 @@ $sizeIcon: 85px;
         justify-content: flex-end;
         list-style: none;
         width: 75%;
-        margin-right: 12px;
         .Home, .AboutCharacter, .AboutLocation {
             text-decoration: none;
             color: white;
@@ -39,6 +44,14 @@ $sizeIcon: 85px;
             padding: 10px 20px;
             margin: 0 10px;
             cursor: pointer;
+        }
+        a {
+            @include fontFamily();
+        }
+        a:hover {
+            @include transiton();
+            background-color: $hoverLink;
+            border-radius: $borderRadius;
         }
     }
 }
@@ -52,7 +65,7 @@ $sizeIcon: 85px;
         height: 98% !important;
     }
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 856px) {
     .logo {
         display: none;
     }
@@ -75,6 +88,7 @@ $sizeIcon: 85px;
         top: 75px;
         @include transiton();
         width: 100%;
+        z-index: 1 !important;
     }
     .Home, .AboutCharacter, .AboutLocation {
         color: white;
