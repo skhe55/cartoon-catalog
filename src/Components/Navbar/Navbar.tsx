@@ -16,11 +16,11 @@ function Navbar() {
                     <NavLink to="/" className="Home" onClick={() => dispatch(resetData())}>
                         <li>Home</li>
                     </NavLink>
-                    <NavLink to="/" className="AboutCharacter">
-                        <li>About Character</li>
+                    <NavLink exact to="/character" className="AboutCharacter">
+                        <li>Characters</li>
                     </NavLink>
-                    <NavLink to="/" className="AboutLocation">
-                        <li>About Location</li>
+                    <NavLink exact to="/location" className="AboutLocation">
+                        <li>Locations</li>
                     </NavLink>
                 </ul>
                 <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>

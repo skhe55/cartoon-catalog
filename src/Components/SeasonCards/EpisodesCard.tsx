@@ -6,7 +6,7 @@ function EpisodeCards(props: any) {
     return (
         <div className="_wrapCardItem">
             <div className='containerFlex'>
-                <div className='cardItemStyles'>
+                <div className='LinkStyles'>
                     <NavLink to={{
                         pathname: "/aboutepisode",
                         state: {
