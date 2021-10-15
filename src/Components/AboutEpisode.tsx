@@ -14,8 +14,6 @@ function AboutSeries() {
     useEffect(() => {
         dispatch({ type: FETCH_CHARACTERS, payload: state.charactersUrlList })
     }, []);
-    console.log(characters);
-    console.log(isFetching);
     return (
         <div>
             {!isFetching ? <div className="fetching"></div> :

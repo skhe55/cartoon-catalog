@@ -10,22 +10,24 @@ import { RootState } from '../Store/redux/index';
 function Main() {
     const series = useSelector((state: RootState) => state.seriesReducer.series);
     const dispatch = useDispatch();
+    const [searchValue, setSearchValue] = useState<string>("");
     const getEpisodes = (el: any) => {
         return series.filter((e: any) => e.episode.slice(2, 3) == el);
+    }
+    const getEpisodesByName = (el: any) => {
+        return series.filter((e: any) => e.name.includes(el));
     }
     const seasons: Array<number> = [1, 2, 3, 4];
     useEffect(() => {
         dispatch({ type: FETCH_SERIES });
     }, [])
-    if (series[0] != undefined)
-        console.log(series);
+    console.log(series)
     return (
         <div className='_mainFlexContainer'>
             <div className='_wrapperMainFlexCont'>
-                {/* <i className="fas fa-search"></i> */}
-                <input className='_inputSearch' placeholder="Type here"></input>
+                <input onChange={(e) => setSearchValue(e.target.value)} className='_inputSearch' placeholder="Type here"></input>
             </div>
-            {
+            {searchValue == "" ?
                 seasons.map((el: any) => {
                     return (
                         <> <Header season={el} />
@@ -41,6 +43,20 @@ function Main() {
                                     )} </div>
                             </div>
                         </>);
+                }) :
+                getEpisodesByName(searchValue).map((el: any) => {
+                    return (
+                        <div className='_wrapContainer'>
+                            <div className='_rowFlexWrap'>
+                                <EpisodeCards
+                                    nameEP={el.name}
+                                    date={el.air_date}
+                                    serialnum={el.episode.slice(4, 6)}
+                                    characters={el.characters}
+                                />
+                            </div>
+                        </div>
+                    );
                 })
             }
         </div>
