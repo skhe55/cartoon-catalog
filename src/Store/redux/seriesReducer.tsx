@@ -1,7 +1,7 @@
 import { SET_SERIES } from "./type";
 
 const initialState: any = {
-    series: []
+    series: [],
 };
 
 export default function seriesReducer(state = initialState, action: any) {
@@ -12,7 +12,7 @@ export default function seriesReducer(state = initialState, action: any) {
                 series:
                     [
                         ...action.payload
-                    ]
+                    ],
             }
         default: {
             return state;
