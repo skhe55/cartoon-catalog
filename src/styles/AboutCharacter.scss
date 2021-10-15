@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+$marginlr: 12px;
+
+
+._mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: $marginlr;
+    margin-right: $marginlr;
+    ._wrapBody {
+        display: flex;
+        width: 35%;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 80px auto 0 auto;
+            ._input {
+                width: 100%;
+                height: 100%;
+                padding: 6px 0 6px 10px;
+                font-size: 30px;
+                color: black;
+                border-radius: 12px;
+                border-color: black !important;
+            }
+            ._input:focus {
+                border-color: black !important;
+                outline: none;
+            }
+        }
+    }
+
+._columnFlexContainer {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    height: 330px;
+    padding: 5px 5px 5px 5px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.2);
+    background-color: #b3b27d;
+    ._img {
+        border-radius: 12px 12px 0 0;
+        }
+    ._divFlexText {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width:1122px) {
+    ._wrapBody {
+        width: 33% !important;
+        ._input {
+            font-size: 20px !important;
+        }
+    }
+}
+@media screen and (max-width:800px) {
+    ._wrapBody {
+        width: 45% !important;
+    }
+}
+@media screen and (max-width:558px) {
+    ._wrapBody {
+        width: 55% !important;
+    }
+}

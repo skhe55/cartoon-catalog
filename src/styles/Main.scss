@@ -4,8 +4,6 @@ $sizeInputText: 30px;
     box-sizing: border-box;
     margin: 0;
     top: 0;
-    // left: 0;
-    // background-color: #a7cbd2;
 }
 
 ._mainFlexContainer {
@@ -14,15 +12,18 @@ $sizeInputText: 30px;
     margin-left: 12px;
     margin-right: 12px;
     ._wrapperMainFlexCont {
+        position: sticky;
         display: flex;
         width: 35%;
         justify-content: flex-start;
         align-items: center;
         margin: 10px auto 0 auto;
             ._inputSearch {
+                position: sticky;
                 width: 100%;
                 height: 100%;
                 padding: 6px 0 6px 10px;
+                margin-top: 80px;
                 font-size: $sizeInputText;
                 color: black;
                 border-radius: 12px;
@@ -31,10 +32,6 @@ $sizeInputText: 30px;
             ._inputSearch:focus {
                 border-color: black !important;
                 outline: none;
-            }
-            .fas.fa-search {
-                margin-right: 5px;
-                font-size: 2.2rem
             }
     }
 }
@@ -46,18 +43,20 @@ $sizeInputText: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 420px;
+        height: auto;
         flex-wrap: wrap;
     }
 }
 
-@media screen and (max-width: 780px){   
-    ._rowFlexWrap {
-        display: none !important;
+@media screen and (max-width: 550px) {
+    ._wrapperMainFlexCont {
+        position: static !important;
+        width: 65% !important;
+        margin: 10px auto 0 auto !important;
+            ._inputSearch {
+                position: static !important;
+                font-size: 20px;
+            }
     }
-    ._rowFlexWrap-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}   
+}
+
