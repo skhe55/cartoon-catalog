@@ -10,9 +10,9 @@
     <li>viewing all locations</li>
     <li>viewing all characters</li>
     <li>viewing all episodes with info about them</li>
-    <li>seraching episode by name</li>
+    <li>searching episode by name</li>
     <li>sort episodes by name</li>
-    <li>seraching location by name</li>
+    <li>searching location by name</li>
   </ul>
 <h1>Usage</h1>
 <ul>
