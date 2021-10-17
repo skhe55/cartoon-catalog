@@ -1,7 +1,9 @@
-import { SET_LOCATIONS } from "./type";
+import { SET_LOCATIONS, SET_FETCHISUP } from "./type";
 
 const initialState: any = {
-    locations: []
+    locations: [],
+    locationsIsFetch: true,
+    totalCount: 1,
 };
 
 export default function locationsReducer(state = initialState, action: any) {
@@ -11,8 +13,16 @@ export default function locationsReducer(state = initialState, action: any) {
                 ...state,
                 locations:
                     [
-                        ...action.payload
+                        ...state.locations,
+                        ...action.payload,
                     ],
+                locationsIsFetch: false,
+                totalCount: state.totalCount + 1,
+            }
+        case SET_FETCHISUP:
+            return {
+                ...state,
+                locationsIsFetch: true,
             }
         default:
             return state;
