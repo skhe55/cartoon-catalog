@@ -23,3 +23,4 @@ export const resetData = () => {
 export const setLocations = (payload: any) => {
     return ({ type: SET_LOCATIONS, payload });
 };
+
