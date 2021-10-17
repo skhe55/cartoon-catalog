@@ -16,8 +16,6 @@
   </ul>
 <h1>Usage</h1>
 <ul>
-<p>/initialize repo with yarn or npm</p>
-<li>yarn init -y</li><br>
 <p>add typecript</p>
 <li>npm install typescript</li><br>
 <p>/import react-router-dom for navigate btw pages</p>
@@ -39,6 +37,7 @@
   <li>npm i --save-dev @typescript-eslint/parser </li>
   <li>npm i --save-dev eslint-plugin-react-hooks</li>
   <li>npm i --save-dev eslint-plugin-react</li><br>
+  <li>yarn start</li><br>
 <p>when error occurs add required dependency from package.json </p>
 </ul>
   <h1>Preview</h1>
