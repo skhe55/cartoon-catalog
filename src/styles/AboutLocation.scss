@@ -3,6 +3,13 @@
     margin-top: 6%;
     width: 100%;
     height: 100%;
+    .__bodyFlex {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+    }
     .imgFlexContainer {
         display: flex;
         justify-content: center;
@@ -19,5 +26,50 @@
         flex-direction: row;
         flex-wrap: wrap;
         margin: 6px 12px 6px 12px;
+    }
+    .inputFlexContainer {
+        display: flex;
+        justify-content: center;
+        margin: 80px auto 0 auto;
+            ._inputLocation {
+                width: 33%;
+                height: 100%;
+                padding: 6px 0 6px 10px;
+                font-size: 30px;
+                color: black;
+                border-radius: 12px;
+                border-color: black !important;
+            }
+            ._inputLocation:focus {
+                border-color: black !important;
+                outline: none;
+            }
+    }
+}
+
+@media screen and (max-width: 1658px) {
+    ._inputLocation {
+        font-size: 24px !important;
+    }
+}
+@media screen and (max-width: 1414px) {
+    ._inputLocation {
+        width: 44% !important;
+        font-size: 23px !important;
+    }
+}
+
+@media screen and (max-width: 1014px) {
+    ._inputLocation {
+        width: 44% !important;
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (max-width: 518px) {
+    ._inputLocation {
+        width: 67% !important;
+        height: 55px !important;
+        font-size: 17px !important;
     }
 }
