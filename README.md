@@ -1,3 +1,20 @@
+<h1>Catalog-cartoon-rick&morty</h1>
+  <p>React application w/o cra.</p>
+  <p>Catalog episodes and some stuff information cartoon Rick & Morty</p>
+  <p>Stack: react, redux, redux-saga, typescript</p>
+<h1>Features</h1>
+  <ul>
+    <li>infinity scroll on each page</li>
+    <li>viewing information about characters each episodes</li>
+    <li>viewing information about characters each locations</li>
+    <li>viewing all locations</li>
+    <li>viewing all characters</li>
+    <li>viewing all episodes with info about them</li>
+    <li>seraching episode by name</li>
+    <li>sort episodes by name</li>
+    <li>seraching location by name</li>
+  </ul>
+<h1>Usage</h1>
 <ul>
 <p>/initialize repo with yarn or npm</p>
 <li>yarn init -y</li><br>
@@ -24,3 +41,9 @@
   <li>npm i --save-dev eslint-plugin-react</li><br>
 <p>when error occurs add required dependency from package.json </p>
 </ul>
+  <h1>Preview</h1>
+<img src="https://github.com/skhe55/cartoon-catalog/blob/master/img/1.png" width="100%" title="">
+  <img src="https://github.com/skhe55/cartoon-catalog/blob/master/img/2.png" width="100%" title="">
+  <img src="https://github.com/skhe55/cartoon-catalog/blob/master/img/3.png" width="100%" title="">
+  <img src="https://github.com/skhe55/cartoon-catalog/blob/master/img/4.png" width="100%" title="">
+  <img src="https://github.com/skhe55/cartoon-catalog/blob/master/img/5.png" width="100%" title="">
