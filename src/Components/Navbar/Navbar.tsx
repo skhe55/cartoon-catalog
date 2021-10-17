@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { resetData } from '../../Store/redux/actions';
 import { useDispatch } from 'react-redux';
+import { SET_FETCHUP_ALL_CHARACTER } from '../../Store/redux/type';
 import './Navbar.scss';
 
 function Navbar() {
@@ -16,7 +17,7 @@ function Navbar() {
                     <NavLink to="/" className="Home" onClick={() => dispatch(resetData())}>
                         <li>Home</li>
                     </NavLink>
-                    <NavLink exact to="/character" className="AboutCharacter">
+                    <NavLink exact to="/character" className="AboutCharacter" onClick={() => dispatch(resetData())}>
                         <li>Characters</li>
                     </NavLink>
                     <NavLink exact to="/location" className="AboutLocation">
