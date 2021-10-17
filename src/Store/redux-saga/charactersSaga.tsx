@@ -9,9 +9,14 @@ async function fetchCharactersFromApi(url: any) {
 }
 
 async function fetchAllCharactersFromApi(num: number) {
-    const request: any = await fetch(`https://rickandmortyapi.com/api/character/?page=${num}`);
-    const data: any = await request.json();
-    return data;
+    try {
+        const request: any = await fetch(`https://rickandmortyapi.com/api/character/?page=${num}`);
+        const data: any = await request.json();
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
+
 }
 
 export function* charactersWatcher(): any {
@@ -27,12 +32,15 @@ export function* charactersWorker(args: any): any {
     yield put(setCharacters(data));
 }
 
-export function* allCharactersWorker(): any {
-    let data: any = yield call(fetchAllCharactersFromApi, 0); // grab the max number of pages
+export function* allCharactersWorker(args: any): any {
+    // let data: any = yield call(fetchAllCharactersFromApi, 0); // grab the max number of pages
+    // let arr: any = [];
+    // for (let i = 1; i <= data.info.pages; i++) {
+    //     data = yield call(fetchAllCharactersFromApi, i);
+    //     arr = [...arr, ...data.results];
+    // }
+    let data: any = yield call(fetchAllCharactersFromApi, args.payload);;
     let arr: any = [];
-    for (let i = 1; i <= data.info.pages; i++) {
-        data = yield call(fetchAllCharactersFromApi, i);
-        arr = [...arr, ...data.results];
-    }
+    arr = [...data.results];
     yield put(setAllCharacters(arr));
 }
