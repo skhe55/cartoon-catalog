@@ -10,7 +10,7 @@ function AboutSeries() {
     const characters = useSelector((state: RootState) => state.charactersReducer.characters);
     const isFetching = useSelector((state: RootState) => state.charactersReducer.isFetching);
     const dispatch = useDispatch();
-    const { state } = useLocation();
+    const { state }: any = useLocation();
     useEffect(() => {
         dispatch({ type: FETCH_CHARACTERS, payload: state.charactersUrlList })
     }, []);
