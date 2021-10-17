@@ -1,45 +1,55 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../Store/redux';
-import { FETCH_ALL_CHARACTERS } from '../Store/redux/type';
+import { FETCH_ALL_CHARACTERS, SET_FETCHUP_ALL_CHARACTER } from '../Store/redux/type';
 import Card from './CharactersCards/Card';
 import "../styles/AboutCharacter.scss";
 import "../styles/AboutEpisode.scss";
 
 export const AboutCharacter = () => {
     const characters: any = useSelector((state: RootState) => state.charactersReducer.allCharacters);
+    const isFetch: any = useSelector((state: RootState) => state.charactersReducer.isFetchingAllCharacter);
+    const totalCount: any = useSelector((state: RootState) => state.charactersReducer.totalCount);
     const dispatch = useDispatch();
-    const [searchValue, setSearchValue] = useState<string>("");
+    const countPages: number = 34;
 
-    const getCharacterByName = (el: any, array: any) => {
-        return array.filter((e: any) => e.name.includes(el));
+    const scrollHandler = (e: any) => {
+        const a = e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight);
+        if (a < 100 && (totalCount <= countPages)) {
+            dispatch({ type: SET_FETCHUP_ALL_CHARACTER })
+        }
     }
 
     useEffect(() => {
-        dispatch({ type: FETCH_ALL_CHARACTERS })
-    }, [])
+        if (isFetch) {
+            dispatch({ type: FETCH_ALL_CHARACTERS, payload: totalCount });
+        } else if (totalCount == 2) {
+            dispatch({ type: FETCH_ALL_CHARACTERS, payload: totalCount });
+        }
 
+    }, [isFetch])
+
+    useEffect(() => {
+        addEventListener('scroll', scrollHandler);
+        return function () {
+            removeEventListener('scroll', scrollHandler);
+        }
+    }, [isFetch])
     return (
         <div className="_mainContainer">
-            <div className="_wrapBody">
-                <input onChange={((e) => setSearchValue(e.target.value))} className="_input" placeholder="Type here name character"></input>
-            </div>
             <div className="_bodyFlex">
                 {
-                    searchValue == "" ?
-                        <div>
-                        </div> :
-                        getCharacterByName(searchValue, characters).map((el: any) => {
-                            return (
-                                <Card
-                                    imageUrl={el.image}
-                                    name={el.name}
-                                    species={el.species}
-                                    status={el.status}
-                                    location={el.location.name}
-                                />
-                            );
-                        })
+                    characters.map((el: any) => {
+                        return (
+                            <Card
+                                imageUrl={el.image}
+                                name={el.name}
+                                species={el.species}
+                                status={el.status}
+                                location={el.location.name}
+                            />
+                        );
+                    })
                 }
             </div>
         </div>
