@@ -11,6 +11,22 @@ $sizeInputText: 30px;
     flex-direction: column;
     margin-left: 12px;
     margin-right: 12px;
+    .wrapFlexButton {
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+        ._buttonSort {
+        width: 10%;
+        border-radius: 12px;
+        background-color: #2b93ba;
+        text-decoration: none;
+        }
+        ._buttonSort:hover {
+            transition: all 0.4s ease-in;
+            background-color: #b3b27d;
+        }
+    }
+    
     ._wrapperMainFlexCont {
         position: sticky;
         display: flex;
